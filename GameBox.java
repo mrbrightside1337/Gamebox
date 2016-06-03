@@ -1,5 +1,5 @@
 /**
- * GameOfLive.java
+ * GameBox.java
  *
  * Game of Life nach Vorgabe Einführung in die Programmierung 2
  * (siehe README.md)
@@ -9,7 +9,7 @@
  * @author Laura Lohmann (191529)
  */
 
-class GameOfLife {
+class GameBox {
 	public static void main(String[] args) {
 
 		System.out.println("Starte Game of Life");
