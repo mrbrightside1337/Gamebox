@@ -1,7 +1,7 @@
 /**
- * GameModel.java
+ * GoLModel.java
  *
- * Das Spielfeld als kartesisches Koordinatensystem
+ * Game of Life. Das Spielfeld als kartesisches Koordinatensystem
  *
  *		+------------------------------------------------->
  *		| 0,0 | 1,0 | 2,0 | 3,0 | 4,0 | 5,0 | ...
@@ -24,8 +24,8 @@
 
 import java.util.*;
 
-class GameModel extends Observable {
-	private GameModelController controller = new GameModelController(this);
+class GoLModel extends Observable {
+	private GoLModelController controller = new GoLModelController(this);
 
 	static private int gameCounter = 1;
 	private int gameID = 0; // ID dieses Spiels (wird pro Spiel um 1 erhöht)
@@ -39,7 +39,7 @@ class GameModel extends Observable {
 	 * @param	width		Spalten
 	 * @param	height		Zeilen
 	 */
-	public GameModel(int width, int height) {
+	public GoLModel(int width, int height) {
 		gameID = gameCounter++;
 		System.out.println("Erstelle Spiel " + getGameID());
 
@@ -63,7 +63,7 @@ class GameModel extends Observable {
 	/**
 	 * Copy Konstruktor
 	 */
-	public GameModel(GameModel game) {
+	public GoLModel(GameModel game) {
 		this(game.getWidth(), game.getHeight());
 
 		copyField(game.getField(), field);

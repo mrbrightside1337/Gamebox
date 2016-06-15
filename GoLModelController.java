@@ -1,5 +1,5 @@
 /**
- * GameModelController.java
+ * GoLModelController.java
  *
  * Sammlung von Controllern für BaseFrame.java
  *
@@ -12,12 +12,12 @@ import java.awt.event.*;
 import java.util.*;	// ArrayList<E>
 import javax.swing.Timer;
 
-class GameModelController {
-	private GameModel currentGame;
+class GoLModelController {
+	private GoLModel currentGame;
 	private Timer timer;
 	private ActionListener task;
 
-	public GameModelController(GameModel game) {
+	public GoLModelController(GoLModel game) {
 		currentGame = game;
 
 		task = new ActionListener() {
