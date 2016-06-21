@@ -1,7 +1,7 @@
 /**
- * ChildFrameController.java
+ * GoLViewController.java
  *
- * Controllern für ChildFrame.java
+ * Controllern für GoLView.java
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)
