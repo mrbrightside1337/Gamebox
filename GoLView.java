@@ -12,7 +12,6 @@ import java.awt.Color;
 import java.awt.event.*;
 import java.awt.Dimension;
 import java.awt.Graphics;
-//import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
 import java.awt.Point;
 import java.util.*;
@@ -24,11 +23,9 @@ class GoLView extends JInternalFrame implements Observer {
 	private GoLViewController controller;
 	private GoLModel currentGame;
 	private BaseFrame parrentFrame;
-//	private GraphicsView view;
 
 	private JScrollPane scrollPane;
 	private View view;
-//	private JPanel view2;
 	private double zoom = 15;
 	private Color aliveColor = new Color(0, 0, 0);
 	private Color deadColor = new Color(255, 255, 255);
@@ -44,7 +41,7 @@ class GoLView extends JInternalFrame implements Observer {
 		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
 		setSize(400, 300);
 		setLocation(0,0);
-		//setLayout(new GridBagLayout());
+		setLayout(new BorderLayout());
 
 		currentGame = game;
   		parrentFrame = parrent;
@@ -74,13 +71,6 @@ class GoLView extends JInternalFrame implements Observer {
 		return parrentFrame;
 	}
 
-	/**
-	 * @return	Der GraphicsView dieses Frames
-	 */
-/*	public View getView() {
-		return view;
-	}
-*/
 	public void setAliveColor(Color c) {
 		aliveColor = c;
 		repaint();
@@ -107,7 +97,7 @@ class GoLView extends JInternalFrame implements Observer {
 	public void setMode(int m) {
 		mode = m;
 
-		// Entferne zuarst alle bisherigen MouseListener
+		// Entferne zuerst alle bisherigen MouseListener
 		MouseListener[] mouseListeners =
 			view.getMouseListeners();
 
