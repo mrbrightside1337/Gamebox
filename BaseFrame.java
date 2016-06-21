@@ -19,7 +19,7 @@ class BaseFrame extends JFrame {
 	private JDesktopPane desktopPane = new JDesktopPane();
 	private JMenuBar menuBar = new JMenuBar();
 
-	private ArrayList<GameModel> gamesList = new ArrayList<GameModel>();
+	private ArrayList<GoLModel> gamesList = new ArrayList<GoLModel>();
 
 	/**
 	 * Erzeuge das Grundfenster mit angegebener Breite und Höhe
@@ -43,7 +43,7 @@ class BaseFrame extends JFrame {
 	/**
 	 * @return	Liste aller aktiven Spiel
 	 */
-	public ArrayList<GameModel> getGamesList() {
+	public ArrayList<GoLModel> getGamesList() {
 		return gamesList;
 	}
 
@@ -92,7 +92,7 @@ class BaseFrame extends JFrame {
 
 		// Liste aller aktiven Spiele mit ihren Untermenüs
 		JMenu submenuGame;
-		for(GameModel game : gamesList) {
+		for(GoLModel game : gamesList) {
 			submenuGame = new JMenu("Spiel " + game.getGameID());
 
 			JMenuItem submenuItemNewView = new JMenuItem("Neue Ansicht");

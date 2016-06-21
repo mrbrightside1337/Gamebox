@@ -15,9 +15,9 @@ import java.awt.GridBagLayout;
 
 import javax.swing.*;
 
-class ChildFrame extends JInternalFrame {
-	private ChildFrameController controller = new ChildFrameController(this);
-	private GameModel currentGame;
+class GoLView extends JInternalFrame {
+	private GoLViewController controller = new GoLViewController(this);
+	private GoLModel currentGame;
 	private BaseFrame parrentFrame;
 	private GraphicsView view;
 
@@ -26,7 +26,7 @@ class ChildFrame extends JInternalFrame {
 	/**
 	 * @param	game	Das Spiel das in diesem Frame gezeichnet werden soll
 	 */
-	public ChildFrame(BaseFrame parrent, GameModel game) {
+	public GoLView(BaseFrame parrent, GoLModel game) {
 		// JInternalFrame(resizable, closable, maximizable, iconifiable)
 		super("Spiel " + game.getGameID(), true, true, true, true);
 		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);

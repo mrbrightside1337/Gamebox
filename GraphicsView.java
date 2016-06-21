@@ -22,8 +22,8 @@ import javax.swing.*;
 
 class GraphicsView extends JPanel implements Observer {
 	private GraphicsViewController controller = new GraphicsViewController(this);
-	private ChildFrame parrentFrame;
-	private GameModel currentGame;
+	private GoLView parrentFrame;
+	private GoLModel currentGame;
 
 	private double zoom;
 	private Color aliveColor = new Color(0, 0, 0);
@@ -32,7 +32,7 @@ class GraphicsView extends JPanel implements Observer {
 	private int mode = 0; // 0: Laufen, 1: Setzen, 2: Malen
 
 
-	public GraphicsView(ChildFrame frame, GameModel game) {
+	public GraphicsView(GoLView frame, GoLModel game) {
 		super(new GridBagLayout());
 
 		parrentFrame = frame;

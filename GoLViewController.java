@@ -14,17 +14,17 @@ import java.awt.event.*;
 import javax.swing.JColorChooser;
 import javax.swing.event.*;
 
-class ChildFrameController {
-	private ChildFrame childFrame = null;
+class GoLViewController {
+	private GoLView view = null;
 
-	public ChildFrameController(ChildFrame frame) {
-		childFrame = frame;
+	public GoLViewController(GoLView v) {
+		view = v;
 	}
 
-	public InternalFrameListener getFrameListener(GameModel game) {
+	public InternalFrameListener getFrameListener(GoLModel game) {
 		return new InternalFrameListener() {
 			public void internalFrameClosing(InternalFrameEvent e) {
-				game.deleteObserver(childFrame.getView());
+				game.deleteObserver(view.getView());
 
 				System.out.print("Spiel: " + game.getGameID() + " hat noch "
 					+ game.countObservers() + " offene Fenster.");
@@ -56,7 +56,7 @@ class ChildFrameController {
 		};
 	}
 
-	public ActionListener getModeListener(GameModel game, String mode) {
+	public ActionListener getModeListener(GoLModel game, String mode) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				switch(mode) {
@@ -64,20 +64,20 @@ class ChildFrameController {
 						//game.setCycleDelay(delay);
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
-						childFrame.getView().setMode(0);
+						view.getView().setMode(0);
 						//game.resume();
 						break;
 					case ("SETZEN"):
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
 						//game.pause();
-						childFrame.getView().setMode(1);
+						view.getView().setMode(1);
 						break;
 					case ("MALEN"):
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
 						//game.pause();
-						childFrame.getView().setMode(2);
+						view.getView().setMode(2);
 						break;
 					default:
 						System.out.println("Modus nicht bekannt!");
@@ -86,7 +86,7 @@ class ChildFrameController {
 		};
 	}
 
-	public ActionListener getSetDelayListener(GameModel game, int delay) {
+	public ActionListener getSetDelayListener(GoLModel game, int delay) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(delay == 0) {
@@ -120,13 +120,13 @@ class ChildFrameController {
 
 				switch (status) {
 				case "alive":
-					view.setAliveColor(c.showDialog(childFrame, "Farbe wählen", Color.white));
+					view.setAliveColor(c.showDialog(view, "Farbe wählen", Color.white));
 					break;
 				case "dead":
-					view.setDeadColor(c.showDialog(childFrame, "Farbe wählen", Color.white));
+					view.setDeadColor(c.showDialog(view, "Farbe wählen", Color.white));
 					break;
 				case "grid":
-					view.setGridColor(c.showDialog(childFrame, "Farbe wählen", Color.white));
+					view.setGridColor(c.showDialog(view, "Farbe wählen", Color.white));
 					break;
 				default:
 					break;
@@ -152,7 +152,7 @@ class ChildFrameController {
 		};
 	}
 
-	public ActionListener getLoadFormListener(GameModel game, String form) {
+	public ActionListener getLoadFormListener(GoLModel game, String form) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				game.loadForm(form);

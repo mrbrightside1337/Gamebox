@@ -23,8 +23,8 @@ class BaseFrameController {
 	 * Erstellt einen neuen internen Frame und fügt diesen der DesktopPane des
 	 * BaseFrame hinzu
 	 */
-	private void createNewChildFrame(GameModel game) {
-		ChildFrame childFrame = new ChildFrame(baseFrame, game);
+	private void createNewChildFrame(GoLModel game) {
+		GoLView childFrame = new GoLView(baseFrame, game);
 		baseFrame.getDesktopPane().add(childFrame);
 
 		try {
@@ -40,7 +40,7 @@ class BaseFrameController {
 			public void actionPerformed(ActionEvent e) {
 				System.out.print("Starte ein neues Spiel: ");
 
-				GameModel newGame = new GameModel(50, 40);
+				GoLModel newGame = new GoLModel(50, 40);
 				baseFrame.getGamesList().add(newGame);
 
 				createNewChildFrame(newGame);
@@ -53,12 +53,12 @@ class BaseFrameController {
 	/**
 	 * Erstellt ein neues Spiel als Kopie eines bereits bestehenden Spiels
 	 */
-	public ActionListener getNewGameCopyListener(GameModel game) {
+	public ActionListener getNewGameCopyListener(GoLModel game) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.print("Starte ein neues Spield: ");
 
-				GameModel newGame = new GameModel(game);
+				GoLModel newGame = new GoLModel(game);
 				baseFrame.getGamesList().add(newGame);
 
 				createNewChildFrame(newGame);
@@ -71,7 +71,7 @@ class BaseFrameController {
 	/**
 	 * Öffnet eine neue Ansicht auf ein bereits bestehendes Spiel
 	 */
-	public ActionListener getNewViewListener(GameModel game) {
+	public ActionListener getNewViewListener(GoLModel game) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Öffne neuen View für Spiel " + game.getGameID());
@@ -98,7 +98,7 @@ class BaseFrameController {
 	 * Schliesse ein Spiel mit all seinen Ansichten (InternalFrames)
 	 * Aktualisiere das Menü damit der Eintrag entfernt wird.
 	 */
-	public ActionListener getCloseGameListener(GameModel game) {
+	public ActionListener getCloseGameListener(GoLModel game) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Beende Spiel " + game.getGameID());

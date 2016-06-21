@@ -63,7 +63,7 @@ class GoLModel extends Observable {
 	/**
 	 * Copy Konstruktor
 	 */
-	public GoLModel(GameModel game) {
+	public GoLModel(GoLModel game) {
 		this(game.getWidth(), game.getHeight());
 
 		copyField(game.getField(), field);
