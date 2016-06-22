@@ -29,7 +29,7 @@ class BaseFrame extends JFrame {
 	 */
 	public BaseFrame(int width, int height) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Game of Life");
+		setTitle("GameBox");
 		setSize(width, height);
 
 		desktopPane.setDesktopManager(new DefaultDesktopManager());
@@ -86,7 +86,7 @@ class BaseFrame extends JFrame {
 			menuBar.remove(0);
 			menuBar.revalidate();
 		}
-		JMenu menu = new JMenu("Spiele");
+		JMenu menu = new JMenu("GoL");
 
 		// Neues Spiel erstellen
 		JMenuItem menuItemNewGame = new JMenuItem("Neues Spiel");
