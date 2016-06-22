@@ -5,15 +5,17 @@
  */
 public class RegenbogenThread extends Thread {
 	
-	RegenbogenFarben rbf;
+	private RegenbogenFarben rbf;
+	private BaseFrame baseframe;
 	
 	/**
 	 * Konstruktor eines RegenbogenThread-Thread.
 	 * Erzeugt ein RegenbogenFarben-Frame.
 	 */
-	public RegenbogenThread(){
-		rbf = new RegenbogenFarben();
+	public RegenbogenThread(BaseFrame baseframe){
+		rbf = new RegenbogenFarben(baseframe);
 		this.start();
+		this.baseframe = baseframe;
 	}
 	
 	/**
