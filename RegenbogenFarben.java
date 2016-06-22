@@ -1,0 +1,40 @@
+import java.awt.Color;
+import java.awt.Frame;
+
+/**
+ * Hilfsklasse RegenbogenFarben erzeugt Frames mit RegenbogenFarben.
+ * @author Timo Appenzeller, 191382
+ * @date 24.03.2016
+ *
+ */
+public class RegenbogenFarben extends Frame {
+	
+	Color[] colors = { 	Color.red,
+						Color.orange,
+						Color.yellow,
+						Color.green,
+						new Color(0, 191, 255), //light Skyblue
+						new Color(75, 0, 130), //Indigo
+						new Color(148,0,211) //Violet 
+						}; // Farbpalette
+	int col = 0; //aktuelle Farbe
+	
+	/**
+	 * Konstruktor zur Erzeugung von RegenbogenFarben-Frames.
+	 */
+	public RegenbogenFarben(){
+		addWindowListener(new WindowQuitter());
+		setSize(300, 300);
+		setVisible(true);
+	}
+	
+	/**
+	 * Die Methode changeBackgroundColor wechselt bei jedem Aufruf zyklisch durch die in colors festgelegten Hintergrundfarben. 
+	 */
+	public void changeBackgroundColor(){
+		setBackground( colors[col] );
+		col = (col+1) % colors.length;
+		repaint();
+	}
+
+}

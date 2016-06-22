@@ -13,11 +13,11 @@ import java.awt.event.*;
 import java.awt.Point;
 
 class GraphicsViewController {
-	private GraphicsView currentFrame;
+	private GoLView currentFrame;
 	private Point mousePt = new Point();
 	private Point lastCell = new Point();
 
-	public GraphicsViewController(GraphicsView frame) {
+	public GraphicsViewController(GoLView frame) {
 		currentFrame = frame;
 	}
 
