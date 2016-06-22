@@ -145,6 +145,16 @@ class BaseFrame extends JFrame {
 		menu.add(quodStarten);
 		menuBar.add(menu);
 
+		//****************************
+		// Menüeinträge für Schloss
+		//****************************
+		
+		menu = new JMenu("Schloss");
+		JMenuItem schlossStarter = new JMenuItem("Starten");
+		schlossStarter.addActionListener(controller.getSchlossListener());
+		menu.add(schlossStarter);
+		menuBar.add(menu);
+
 		return menuBar;
 	}
 }

@@ -139,8 +139,6 @@ class BaseFrameController {
 			public void actionPerformed(ActionEvent e) {
 				
 				new Regenbogen(baseFrame);
-
-				//baseFrame.updateMenu();
 			}
 		};
 	}
@@ -153,8 +151,18 @@ class BaseFrameController {
 			public void actionPerformed(ActionEvent e) {
 				
 				new QuodFrame(baseFrame);
+			}
+		};
+	}
 
-				//baseFrame.updateMenu();
+	/**
+	 * Für Schloss-Menü
+	 */
+	public ActionListener getSchlossListener() {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				new SchlossView(baseFrame);
 			}
 		};
 	}
