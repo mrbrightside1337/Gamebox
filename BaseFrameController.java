@@ -144,4 +144,18 @@ class BaseFrameController {
 			}
 		};
 	}
+	
+	/**
+	 * Für Quod-Menü
+	 */
+	public ActionListener getQuodListener() {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				new QuodFrame(baseFrame);
+
+				//baseFrame.updateMenu();
+			}
+		};
+	}
 }

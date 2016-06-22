@@ -134,6 +134,17 @@ class BaseFrame extends JFrame {
 		regenbogenStarten.addActionListener(controller.getRegenbogenListener());
 		menu.add(regenbogenStarten);
 		menuBar.add(menu);
+		
+		//****************************
+		// Menüeinträge für Quod
+		//****************************
+		
+		menu = new JMenu("Quod");
+		JMenuItem quodStarten = new JMenuItem("Starten");
+		quodStarten.setActionCommand("quodStarten");
+		quodStarten.addActionListener(controller.getQuodListener());
+		menu.add(quodStarten);
+		menuBar.add(menu);
 
 		
 		
