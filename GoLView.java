@@ -1,5 +1,5 @@
 /**
- * Child.java
+ * GoLView.java
  *
  * Das Kindfenster mit dem View auf das Spiel
  *
