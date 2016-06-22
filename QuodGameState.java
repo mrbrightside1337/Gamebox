@@ -1,3 +1,10 @@
+/**
+ * QuadGameState.java
+ *
+ * Die Zustände die das Spiel "Quod" annehmen kann
+ *
+ * @author Timo Appenzeller, 191382
+ */
 
 public enum QuodGameState {
 	

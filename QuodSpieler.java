@@ -1,13 +1,11 @@
+/**
+ * QuadSpieler.java
+ *
+ * @author Timo Appenzeller, 191382
+ */
+
 import java.util.Observable;
 
-/**
- * 
- */
-
-/**
- * @author Timo
- *
- */
 public class QuodSpieler extends Observable {
 	
 	private int anzahlQuods, anzahlQuasare, nummer;

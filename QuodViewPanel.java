@@ -1,3 +1,9 @@
+/**
+ * QuadViewPanel.java
+ *
+ * @author Timo Appenzeller, 191382
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -6,17 +12,13 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
-/**
- * @author Timo
- *
- */
 public class QuodViewPanel extends JPanel implements Observer {
 
-	
+
 	private double zoom=50;
 	
 	private QuodSpielfeld spielfeld;
-	
+
 	private QuodGameController controller;
 	
 	private Color colorPlayerOne = new Color(255, 0, 0);
@@ -114,7 +116,8 @@ public class QuodViewPanel extends JPanel implements Observer {
 	}
 
 	/**
-	 * Bei Änderungen (nach Spielzügen) soll das Spielfeld neu gezeichnet werden.
+	 * Bei Änderungen (nach Spielzügen) soll das Spielfeld neu gezeichnet
+	 * werden.
 	 */
 	public void update(Observable arg0, Object arg1) {
 		repaint();

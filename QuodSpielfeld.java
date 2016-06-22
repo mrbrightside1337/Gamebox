@@ -1,13 +1,11 @@
+/**
+ * QuadSpielfeld.java
+ *
+ * @author Timo Appenzeller, 191382
+ */
+
 import java.util.Observable;
 
-/**
- * 
- */
-
-/**
- * @author Timo
- *
- */
 public class QuodSpielfeld extends Observable {
 	
 	/**

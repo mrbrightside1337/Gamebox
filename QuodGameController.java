@@ -1,3 +1,9 @@
+/**
+ * QuadGameController.java
+ *
+ * @author Timo Appenzeller, 191382
+ */
+
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

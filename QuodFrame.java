@@ -1,3 +1,9 @@
+/**
+ * QuadFrame.java
+ *
+ * @author Timo Appenzeller, 191382
+ */
+
 import java.awt.Dimension;
 
 import javax.swing.Box;
