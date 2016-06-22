@@ -77,15 +77,14 @@ class BaseFrame extends JFrame {
 	 *
 	 */
 	public JMenuBar updateMenu() {
+
+		// Erstelle eine neue saubere MenuBar
+		menuBar = new JMenuBar();
 		
 		//****************************
 		// Menüeinträge für GoL
 		//****************************
-		
-		if(menuBar.getMenuCount() > 0) {
-			menuBar.remove(0);
-			menuBar.revalidate();
-		}
+
 		JMenu menu = new JMenu("GoL");
 
 		// Neues Spiel erstellen
@@ -146,8 +145,6 @@ class BaseFrame extends JFrame {
 		menu.add(quodStarten);
 		menuBar.add(menu);
 
-		
-		
 		return menuBar;
 	}
 }
