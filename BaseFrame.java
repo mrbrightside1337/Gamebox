@@ -77,6 +77,11 @@ class BaseFrame extends JFrame {
 	 *
 	 */
 	public JMenuBar updateMenu() {
+		
+		//****************************
+		// Menüeinträge für GoL
+		//****************************
+		
 		if(menuBar.getMenuCount() > 0) {
 			menuBar.remove(0);
 			menuBar.revalidate();
@@ -118,7 +123,20 @@ class BaseFrame extends JFrame {
 		menu.add(menuItemClose);
 
 		menuBar.add(menu);
+		
+		//****************************
+		// Menüeinträge für Regenbogen
+		//****************************
+		
+		menu = new JMenu("Regenbogen");
+		JMenuItem regenbogenStarten = new JMenuItem("Starten");
+		regenbogenStarten.setActionCommand("regenbogenStarten");
+		regenbogenStarten.addActionListener(controller.getRegenbogenListener());
+		menu.add(regenbogenStarten);
+		menuBar.add(menu);
 
+		
+		
 		return menuBar;
 	}
 }
