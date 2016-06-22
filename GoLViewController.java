@@ -126,7 +126,7 @@ class GoLViewController {
 	 * ColorChooser setzt die Frabe von [status] auf die im color chooser
 	 * gewählte Frabe
 	 *
-	 * @param	status	das Objekt dessen Frabe geändert werden soll
+	 * @param	status	Das Objekt dessen Frabe geändert werden soll
 	 */
 	public ActionListener getColorChooserListener(String status) {
 		return new ActionListener() {
@@ -160,22 +160,6 @@ class GoLViewController {
 				game.loadForm(form);
 			}
 		};
-	}
-
-	public void clearMouseListeners() {
-		MouseListener[] mouseListeners =
-			view.getMouseListeners();
-
-		for(MouseListener ml : mouseListeners) {
-			view.removeMouseListener(ml);
-		}
-
-		MouseMotionListener[] mouseMotionListeners =
-			view.getMouseMotionListeners();
-
-		for(MouseMotionListener ml : mouseMotionListeners) {
-			view.removeMouseMotionListener(ml);
-		}
 	}
 
 	public MouseAdapter getMouseLaufenListener() {

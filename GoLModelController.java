@@ -22,8 +22,8 @@ class GoLModelController {
 
 		task = new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-				System.out.print("Timer Event (" + game.getCycleDelay()
-				+ "ms) Spiel " + currentGame.getGameID() + ": ");
+				//System.out.print("Timer Event (" + game.getCycleDelay()
+				//+ "ms) Spiel " + currentGame.getGameID() + ": ");
 				currentGame.cycle();
 			}
 		};

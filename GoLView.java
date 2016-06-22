@@ -372,25 +372,6 @@ class GoLView extends JInternalFrame implements Observer {
 		menu.add(menuItem);
 		menuBar.add(menu);
 
-		/*
-		 * Evtl. später. Im Moment buggy. (View wird nicht richtig größer)
-		 *
-		menu = new JMenu("Zoom"); // Ändere Zoomlevel
-		menuItem = new JMenuItem("x20");
-		menuItem.addActionListener(controller.getSetZoomListener(view, 20));
-		menu.add(menuItem);
-		menuItem = new JMenuItem("x15");
-		menuItem.addActionListener(controller.getSetZoomListener(view, 15));
-		menu.add(menuItem);
-		menuItem = new JMenuItem("x10");
-		menuItem.addActionListener(controller.getSetZoomListener(view, 10));
-		menu.add(menuItem);
-		menuItem = new JMenuItem("x5");
-		menuItem.addActionListener(controller.getSetZoomListener(view, 5));
-		menu.add(menuItem);
-		menuBar.add(menu);
-		*/
-
 		return menuBar;
 	}
 }

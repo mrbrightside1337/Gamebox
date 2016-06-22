@@ -30,11 +30,12 @@ public class RegenbogenFarben extends JInternalFrame {
 	/**
 	 * Konstruktor zur Erzeugung von RegenbogenFarben-Frames.
 	 */
-	public RegenbogenFarben(BaseFrame baseframe){
-		this.baseframe = baseframe;
+	public RegenbogenFarben(BaseFrame parrent){
+		super("Regenbogen-Farben", true, true, true, true);
+		baseframe = parrent;
 		setSize(300, 300);
-		setTitle("Regenbogen-Farben");
 		setVisible(true);
+
 		baseframe.add(this);
 		try {
 			this.setSelected(true);

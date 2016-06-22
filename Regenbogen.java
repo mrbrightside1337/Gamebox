@@ -17,21 +17,25 @@ import java.awt.event.ActionListener;
 import javax.swing.JInternalFrame;
 
 public class Regenbogen extends JInternalFrame implements ActionListener{
-	
-	private Button btn = new Button("      ");
+
+	private Button btn = new Button("  Starter  ");
 	private BaseFrame baseframe;
-	
+
 	/**
 	 * Konstruktor von Regenbogen-Frames.
 	 */
-	public Regenbogen(BaseFrame baseframe){
-		this.baseframe = baseframe;
+	public Regenbogen(BaseFrame parrent){
+		super("Regenbogen-Starter", true, true, true, true);
+		baseframe = parrent;
 		setLayout(new FlowLayout());
-		setSize(300, 300);
-		setTitle("Regenbogen-Starter");
+		setSize(200, 100);
+
+		btn.setPreferredSize(new Dimension(80, 40));
 		btn.addActionListener(this);
 		add(btn);
+
 		setVisible(true);
+
 		baseframe.add(this);
 		try {
 			this.setSelected(true);
