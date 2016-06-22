@@ -33,6 +33,8 @@ public class QuodFrame extends JInternalFrame {
 	public QuodFrame(BaseFrame baseframe){
 		// JInternalFrame(resizable, closable, maximizable, iconifiable)
 		super("Quod", true, true, true, true);
+		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+
 		this.baseframe = baseframe;
 		
 		spielfeld = new QuodSpielfeld();
@@ -43,7 +45,6 @@ public class QuodFrame extends JInternalFrame {
 		
 		wrapperPanel = new JPanel();
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(900, 700);
 
 		menubar = new JMenuBar();
