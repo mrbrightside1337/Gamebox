@@ -1,5 +1,5 @@
 /**
- * QuadInfoPanel.java
+ * QuodInfoPanel.java
  *
  * @author Timo Appenzeller, 191382
  */
@@ -21,10 +21,10 @@ public class QuodInfoPanel extends JPanel implements Observer {
 	
 	private JLabel statusLabel;
 	private JLabel spielerEinsLabel;
-	private JLabel spielerEinsQuadsLabel;
+	private JLabel spielerEinsQuodsLabel;
 	private JLabel spielerEinsQuasareLabel;
 	private JLabel spielerZweiLabel;
-	private JLabel spielerZweiQuadsLabel;
+	private JLabel spielerZweiQuodsLabel;
 	private JLabel spielerZweiQuasareLabel;
 	private JPanel steinePanel;
 	private JPanel statusPanel;
@@ -59,24 +59,24 @@ public class QuodInfoPanel extends JPanel implements Observer {
 
 		spielerZweiLabel = new JLabel("Spieler 2");
 		spielerZweiLabel.setFont(spielerZweiLabel.getFont().deriveFont(18f));
-		spielerEinsQuadsLabel = new JLabel("Quads: "+spielerEins.getAnzahlQuods());
+		spielerEinsQuodsLabel = new JLabel("Quods: "+spielerEins.getAnzahlQuods());
 		spielerEinsQuasareLabel = new JLabel("Quasare: "+spielerEins.getAnzahlQuasare());
-		spielerEinsQuadsLabel.setFont(spielerEinsQuadsLabel.getFont().deriveFont(14f));
+		spielerEinsQuodsLabel.setFont(spielerEinsQuodsLabel.getFont().deriveFont(14f));
 		spielerEinsQuasareLabel.setFont(spielerEinsQuasareLabel.getFont().deriveFont(14f));
 		
-		spielerZweiQuadsLabel = new JLabel("Quads: "+spielerZwei.getAnzahlQuods());
+		spielerZweiQuodsLabel = new JLabel("Quods: "+spielerZwei.getAnzahlQuods());
 		spielerZweiQuasareLabel = new JLabel("Quasare: "+spielerZwei.getAnzahlQuasare());
-		spielerZweiQuadsLabel.setFont(spielerZweiQuadsLabel.getFont().deriveFont(14f));
+		spielerZweiQuodsLabel.setFont(spielerZweiQuodsLabel.getFont().deriveFont(14f));
 		spielerZweiQuasareLabel.setFont(spielerZweiQuasareLabel.getFont().deriveFont(14f));
 		
 		spielerEinsPanel.setLayout(new BoxLayout(spielerEinsPanel, BoxLayout.Y_AXIS));
 		spielerEinsPanel.add(spielerEinsLabel);
-		spielerEinsPanel.add(spielerEinsQuadsLabel);
+		spielerEinsPanel.add(spielerEinsQuodsLabel);
 		spielerEinsPanel.add(spielerEinsQuasareLabel);
 		
 		spielerZweiPanel.setLayout(new BoxLayout(spielerZweiPanel, BoxLayout.Y_AXIS));
 		spielerZweiPanel.add(spielerZweiLabel);
-		spielerZweiPanel.add(spielerZweiQuadsLabel);
+		spielerZweiPanel.add(spielerZweiQuodsLabel);
 		spielerZweiPanel.add(spielerZweiQuasareLabel);
 		
 		statusPanel = new JPanel();
@@ -97,11 +97,11 @@ public class QuodInfoPanel extends JPanel implements Observer {
 	 */
 	public void update(Observable obs, Object obj) {
 		if (obs==spielerEins) {
-			spielerEinsQuadsLabel.setText("Quads: "+spielerEins.getAnzahlQuods());
+			spielerEinsQuodsLabel.setText("Quods: "+spielerEins.getAnzahlQuods());
 			spielerEinsQuasareLabel.setText("Quasare: "+spielerEins.getAnzahlQuasare());
 		}
 		else if(obs==spielerZwei){
-			spielerZweiQuadsLabel.setText("Quads: "+spielerZwei.getAnzahlQuods());
+			spielerZweiQuodsLabel.setText("Quods: "+spielerZwei.getAnzahlQuods());
 			spielerZweiQuasareLabel.setText("Quasare: "+spielerZwei.getAnzahlQuasare());
 		}
 		else if(obs==controller){
