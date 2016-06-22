@@ -2,42 +2,53 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JInternalFrame;
+
 /**
- * Schreiben Sie ein GUI-Programm Regenbogen, welches zunächst ein Fenster aufmacht 
- * mit einem Knopf.  Durch Drücken des Knopfes wird (jedesmal neu) ein zusätzliches Fenster
- * geöffnet, in dem automatisch im Dreiviertelsekundentakt die Farbe wechselt, wobei reihum
+ * Schreiben Sie ein GUI-Programm Regenbogen, welches zunï¿½chst ein Fenster aufmacht 
+ * mit einem Knopf.  Durch Drï¿½cken des Knopfes wird (jedesmal neu) ein zusï¿½tzliches Fenster
+ * geï¿½ffnet, in dem automatisch im Dreiviertelsekundentakt die Farbe wechselt, wobei reihum
  * alle Regenbogenfarben erscheinen.
  * @author Timo Appenzeller, 191382
  * @date 24.03.2016
  */
 
-public class Regenbogen extends Frame implements ActionListener{
+public class Regenbogen extends JInternalFrame implements ActionListener{
 	
-	Button btn = new Button("      ");
+	private Button btn = new Button("      ");
+	private BaseFrame baseframe;
 	
 	/**
 	 * Konstruktor von Regenbogen-Frames.
 	 */
-	public Regenbogen(){
+	public Regenbogen(BaseFrame baseframe){
+		this.baseframe = baseframe;
 		setLayout(new FlowLayout());
+		setSize(300, 300);
+		setTitle("Regenbogen-Starter");
 		btn.addActionListener(this);
 		add(btn);
+		setVisible(true);
+		baseframe.add(this);
+		try {
+			this.setSelected(true);
+		} catch (java.beans.PropertyVetoException e) {}
 	}
 
+	/*
 	public static void main(String[] args) {
 		Regenbogen r = new Regenbogen();
-		WindowQuitter wquit = new WindowQuitter();
-		r.addWindowListener(wquit);
 		r.setSize(300, 300);
 		r.setVisible(true);
 
 	}
-
+	*/
+	
 	/**
-	 * Die actionPerformed-Methode erzeugt jedes mal, wenn der Benutzer auf den Knopf des Frames drückt einen RegenbogenThread.
+	 * Die actionPerformed-Methode erzeugt jedes mal, wenn der Benutzer auf den Knopf des Frames drï¿½ckt einen RegenbogenThread.
 	 */
 	public void actionPerformed(ActionEvent e) {
-		RegenbogenThread rbt = new RegenbogenThread();
+		new RegenbogenThread(baseframe);
 	}
 
 }

@@ -1,13 +1,15 @@
 import java.awt.Color;
 import java.awt.Frame;
 
+import javax.swing.JInternalFrame;
+
 /**
  * Hilfsklasse RegenbogenFarben erzeugt Frames mit RegenbogenFarben.
  * @author Timo Appenzeller, 191382
  * @date 24.03.2016
  *
  */
-public class RegenbogenFarben extends Frame {
+public class RegenbogenFarben extends JInternalFrame {
 	
 	Color[] colors = { 	Color.red,
 						Color.orange,
@@ -19,13 +21,20 @@ public class RegenbogenFarben extends Frame {
 						}; // Farbpalette
 	int col = 0; //aktuelle Farbe
 	
+	private BaseFrame baseframe;
+	
 	/**
 	 * Konstruktor zur Erzeugung von RegenbogenFarben-Frames.
 	 */
-	public RegenbogenFarben(){
-		addWindowListener(new WindowQuitter());
+	public RegenbogenFarben(BaseFrame baseframe){
+		this.baseframe = baseframe;
 		setSize(300, 300);
+		setTitle("Regenbogen-Farben");
 		setVisible(true);
+		baseframe.add(this);
+		try {
+			this.setSelected(true);
+		} catch (java.beans.PropertyVetoException e) {}
 	}
 	
 	/**

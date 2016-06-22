@@ -129,4 +129,19 @@ class BaseFrameController {
 			}
 		};
 	}
+	
+	
+	/**
+	 * Für Regenbogen-Menü
+	 */
+	public ActionListener getRegenbogenListener() {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				new Regenbogen(baseFrame);
+
+				//baseFrame.updateMenu();
+			}
+		};
+	}
 }
