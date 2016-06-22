@@ -1,14 +1,18 @@
+/**
+ * RegenbogenFrarben.java
+ *
+ * Hilfsklasse RegenbogenFarben erzeugt Frames mit RegenbogenFarben.
+ *
+ * @author Timo Appenzeller, 191382
+ * @date 24.03.2016
+ *
+ */
+
 import java.awt.Color;
 import java.awt.Frame;
 
 import javax.swing.JInternalFrame;
 
-/**
- * Hilfsklasse RegenbogenFarben erzeugt Frames mit RegenbogenFarben.
- * @author Timo Appenzeller, 191382
- * @date 24.03.2016
- *
- */
 public class RegenbogenFarben extends JInternalFrame {
 	
 	Color[] colors = { 	Color.red,
@@ -38,7 +42,8 @@ public class RegenbogenFarben extends JInternalFrame {
 	}
 	
 	/**
-	 * Die Methode changeBackgroundColor wechselt bei jedem Aufruf zyklisch durch die in colors festgelegten Hintergrundfarben. 
+	 * Die Methode changeBackgroundColor wechselt bei jedem Aufruf zyklisch
+	 * durch die in colors festgelegten Hintergrundfarben.
 	 */
 	public void changeBackgroundColor(){
 		setBackground( colors[col] );

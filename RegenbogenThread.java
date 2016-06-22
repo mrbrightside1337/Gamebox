@@ -1,8 +1,12 @@
 /**
+ * RegebogenThread.java
+ *
  * Hilfsklasse, die nach 750ms einen Farbewechsel des Hintergrunds veranlasst.
+ *
  * @author Timo Appenzeller, 191382
  * @date 24.03.2016
  */
+
 public class RegenbogenThread extends Thread {
 	
 	private RegenbogenFarben rbf;
