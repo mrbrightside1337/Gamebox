@@ -12,8 +12,7 @@
 class GameBox {
 	public static void main(String[] args) {
 
-		System.out.println("Starte Game of Life");
-		BaseFrame mainWindow = new BaseFrame(1000, 800);
+		new BaseFrame(1000, 800);
 
 	}
 }
