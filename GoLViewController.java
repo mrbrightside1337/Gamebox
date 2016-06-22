@@ -64,22 +64,18 @@ class GoLViewController {
 			public void actionPerformed(ActionEvent e) {
 				switch(mode) {
 					case ("LAUFEN"):
-						//game.setCycleDelay(delay);
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
 						view.setMode(0);
-						//game.resume();
 						break;
 					case ("SETZEN"):
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
-						//game.pause();
 						view.setMode(1);
 						break;
 					case ("MALEN"):
 						System.out.println("Spiel " + game.getGameID()
 							+ ": Modus -> " + mode);
-						//game.pause();
 						view.setMode(2);
 						break;
 					default:
@@ -127,10 +123,10 @@ class GoLViewController {
 	}
 
 	/**
-	 * ZUM TESTEN
-	 * @param view
-	 * @param color
-	 * @return
+	 * ColorChooser setzt die Frabe von [status] auf die im color chooser
+	 * gewählte Frabe
+	 *
+	 * @param	status	das Objekt dessen Frabe geändert werden soll
 	 */
 	public ActionListener getColorChooserListener(String status) {
 		return new ActionListener() {
@@ -215,8 +211,8 @@ class GoLViewController {
 			public void mouseDragged(MouseEvent e) {
 				mousePt = e.getPoint();
 
-				System.out.println("Mausklick: " + mousePt.getX()
-					+ "/" + mousePt.getY());
+				//System.out.println("Mausklick: " + mousePt.getX()
+				//	+ "/" + mousePt.getY());
 
 				Point pt = view.getGridCell(mousePt.getX(),mousePt.getY());
 				view.setGameField((int)(pt.getX()), (int)(pt.getY()));
