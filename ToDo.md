@@ -1,6 +1,5 @@
 #TODO
-* Sonstiges Menüeintrag
-* Laden / Speichern GoL
-* Ringschloss
-* Quod Größenänderung deaktivieren
-* Quod Quadratfindealgorithmus checken / vereinfachen
+* MenÃ¼eintrÃ¤ge Ã¼berarbeiten
+* **GoL** Laden / Speichern
+* **Quod** GrÃ¶ÃŸenÃ¤nderung deaktivieren
+* optional: **5SpaltenPrimzahl** und **MVCExample** integrieren
