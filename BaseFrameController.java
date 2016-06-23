@@ -173,11 +173,13 @@ class BaseFrameController {
 	public ActionListener getSonstigesListener() {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				System.out.println(e.getActionCommand());
 				
 				if(e.getActionCommand().equals("Drehschloss")){
 					new DrehSchloss(baseFrame);
+				}
+				
+				if(e.getActionCommand().equals("Max")){
+					new MaxView(baseFrame);
 				}
 				
 			}

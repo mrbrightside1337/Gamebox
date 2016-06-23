@@ -163,6 +163,11 @@ class BaseFrame extends JFrame {
 		JMenuItem drehSchlossStarter = new JMenuItem("Drehschloss");
 		drehSchlossStarter.addActionListener(controller.getSonstigesListener());
 		menu.add(drehSchlossStarter);
+		
+		JMenuItem maxStarter = new JMenuItem("Max");
+		maxStarter.addActionListener(controller.getSonstigesListener());
+		menu.add(maxStarter);
+		
 		menuBar.add(menu);
 
 		return menuBar;
