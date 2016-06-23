@@ -195,8 +195,8 @@ class GoLViewController {
 			public void mouseDragged(MouseEvent e) {
 				mousePt = e.getPoint();
 
-				//System.out.println("Mausklick: " + mousePt.getX()
-				//	+ "/" + mousePt.getY());
+				System.out.println("Mausklick: " + mousePt.getX()
+					+ "/" + mousePt.getY());
 
 				Point pt = view.getGridCell(mousePt.getX(),mousePt.getY());
 				view.setGameField((int)(pt.getX()), (int)(pt.getY()));
