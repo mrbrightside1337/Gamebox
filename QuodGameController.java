@@ -175,144 +175,17 @@ public class QuodGameController extends Observable{
 					dx=j-x;
 					dy=i-y;
 					
-					/*
-					System.out.println("Stein gesetzt " + x + " "+y);
-					System.out.println("Stein gefunden " + (x+dx) + " "+ (y+dy));					
-					System.out.println("dx " + dx + " dy "+dy);
-					*/
-					
-					if(dx==0){
-						int dxNeu = dy;
-						int dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-						
-						dxNeu = dy*-1;
-						dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
+					int dxNeu = dy;
+					int dyNeu = dx*-1;
+					if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
+						return true;
 					}
 					
-					if(dy==0){
-						int dxNeu = 0;
-						int dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-						
-						dxNeu = 0;
-						dyNeu = dx*-1;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
+					dxNeu = dy*-1;
+					dyNeu = dx;
+					if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
+						return true;
 					}
-
-					if(dx>0 && dy>0){
-//						********
-//						***?****
-//						******?*
-//						**n*****
-//						*****a**
-//						********
-						int dxNeu = dy;
-						int dyNeu = dx*-1;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-//						********
-//						***n****
-//						******a*
-//						**?*****
-//						*****?**
-//						********
-						dxNeu = dy*-1;
-						dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-					}
-					
-					if(dx>0 && dy<0){
-//						********
-//						***+**?*
-//						***?****
-//						*****a**
-//						**n*****
-//						********
-						int dxNeu = dy;
-						int dyNeu = dx*-1;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-
-//						*****a**
-//						**n*****
-//						********
-//						***+**?*
-//						***?****
-//						********
-						dxNeu = dy*-1;
-						dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-					}
-					
-					
-					if(dx<0 && dy<0){
-//						********
-//						***?****
-//						******?*
-//						**a*****
-//						*****n**
-//						********
-						int dxNeu = dy*-1;
-						int dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-
-//						********
-//						***a****
-//						******n*
-//						**?*****
-//						*****?**
-//						********
-						dxNeu = dy;
-						dyNeu = dx*-1;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-					}
-					
-					
-					if(dx<0 && dy>0){
-//						********
-//						******?*
-//						***?****
-//						*****n**
-//						**a*****
-//						********
-						int dxNeu = dy*-1;
-						int dyNeu = dx;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-//						********
-//						***n****
-//						******a*
-//						**?*****
-//						*****?**
-//						********
-						dxNeu = dy;
-						dyNeu = dx*-1;
-						if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
-							return true;
-						}
-					}
-					
 				}
 				
 			}
@@ -333,17 +206,7 @@ public class QuodGameController extends Observable{
 	 */
 	private boolean winCheckHelper(int x, int y, int j, int i, int dx, int dy, int spielerNummer){
 		int anzahl=0;
-		/*
-		System.out.print("\n\n");
-		System.out.print("x "+x);
-		System.out.print(" y "+y);
-		System.out.print(" j "+j);
-		System.out.print(" i "+i);
-		System.out.print(" dx "+dx);
-		System.out.print(" dy "+dy);
-		System.out.print(" Spieler "+spielerNummer);
-		System.out.print("\n\n");
-		*/
+		
 		if(spielfeld.zelleIsOnBoard(x+dx, y+dy)){
 			if(spielfeld.getFeld(x+dx, y+dy)==spielerNummer){
 				anzahl++;
