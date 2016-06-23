@@ -34,7 +34,7 @@ public class QuodInfoPanel extends JPanel implements Observer {
 	public QuodInfoPanel(QuodGameController controller){
 		
 		this.controller = controller;
-				
+		
 		spielerEins = controller.getSpieler(1);
 		spielerZwei = controller.getSpieler(2);
 		
