@@ -195,6 +195,7 @@ class GoLViewController {
 			public void mouseDragged(MouseEvent e) {
 				mousePt = e.getPoint();
 
+				// Hilfsausgabe
 				//System.out.println("Mausklick: " + mousePt.getX()
 				//	+ "/" + mousePt.getY());
 
