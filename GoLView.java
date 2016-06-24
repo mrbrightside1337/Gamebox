@@ -39,7 +39,11 @@ class GoLView extends JInternalFrame implements Observer {
 		super("Spiel " + game.getGameID(), true, true, true, true);
 		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
 		setSize(400, 300);
-		setLocation(0,0);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
+
 		setLayout(new BorderLayout());
 
 		currentGame = game;

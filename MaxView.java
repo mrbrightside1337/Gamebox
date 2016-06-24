@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -48,6 +49,11 @@ public class MaxView extends JInternalFrame {
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(500,500);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
+
 		getContentPane().setBackground(Color.lightGray);
 		st = new MaxSteuerung(p1,p2,this,spielfeld);
 		//addKeyListener(st);

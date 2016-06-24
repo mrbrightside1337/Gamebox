@@ -9,6 +9,7 @@
  */
 
 import java.awt.Color;
+import java.util.Random;
 
 import javax.swing.JInternalFrame;
 
@@ -33,6 +34,11 @@ public class RegenbogenFarben extends JInternalFrame {
 		super("Regenbogen-Farben", true, true, true, true);
 		baseframe = parrent;
 		setSize(300, 300);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
+
 		setVisible(true);
 
 		baseframe.add(this);

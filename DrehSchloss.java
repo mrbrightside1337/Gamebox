@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -42,14 +43,18 @@ public class DrehSchloss extends JInternalFrame implements ActionListener {
 	 * Danach werden die Buttons mithilfe des Grid-Layouts auf dem Frame positioniert.
 	 * Am Ende wird ein Timer gestartet, der jede Sekunde ein ActionEvent erzeugt.
 	 */
-	public DrehSchloss(BaseFrame baseframe){
+	public DrehSchloss(BaseFrame parrent){
 		//title, resizable, closable, maximizable, iconifiable
-		super("Drehschloss 0,1,0,4,2,0,1,6", true, true, true, true);
+		super("Drehschloss - 01 04 20 16", true, true, true, true);
 		
 		this.baseframe = baseframe;
 		
 		setSize(300, 300);
 		
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
+
 		buttons = new JButton[10];
 		bl = new ButtonListener();
 		
@@ -87,7 +92,7 @@ public class DrehSchloss extends JInternalFrame implements ActionListener {
 		
 		setVisible(true);
 		
-		baseframe.add(this);
+		parrent.add(this);
 		try {
 			this.setSelected(true);
 		} catch (java.beans.PropertyVetoException e) {}
@@ -233,7 +238,7 @@ public class DrehSchloss extends JInternalFrame implements ActionListener {
 		 */
 		public void actionPerformed(ActionEvent e) {
 			
-			System.out.println(e.getActionCommand());
+			//System.out.println(e.getActionCommand());
 			
 			byte zahl = Byte.parseByte(e.getActionCommand());
 			

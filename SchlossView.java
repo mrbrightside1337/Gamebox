@@ -8,6 +8,8 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
+
 import javax.swing.*;
 
 class SchlossView extends JInternalFrame implements ActionListener {
@@ -29,6 +31,10 @@ class SchlossView extends JInternalFrame implements ActionListener {
 		super("Schloss - 230360", true, true, true, true);
 		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
 		setSize(350, 200);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
 
   		parrentFrame = parrent;
 

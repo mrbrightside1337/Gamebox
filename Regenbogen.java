@@ -13,6 +13,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JInternalFrame;
 
@@ -29,6 +30,10 @@ public class Regenbogen extends JInternalFrame implements ActionListener{
 		baseframe = parrent;
 		setLayout(new FlowLayout());
 		setSize(200, 100);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(parrent.getWidth() - getWidth()),
+			new Random().nextInt(parrent.getHeight() - getHeight() - 55));
 
 		btn.setPreferredSize(new Dimension(80, 40));
 		btn.addActionListener(this);

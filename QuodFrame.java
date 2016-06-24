@@ -5,6 +5,7 @@
  */
 
 import java.awt.Dimension;
+import java.util.Random;
 
 import javax.swing.Box;
 import javax.swing.JInternalFrame;
@@ -45,6 +46,10 @@ public class QuodFrame extends JInternalFrame {
 		wrapperPanel = new JPanel();
 		
 		setSize(900, 700);
+
+		// Der Offset von 55px bei der Höhe ist wegen dem Menü und der Kopzeile
+		setLocation(new Random().nextInt(baseframe.getWidth() - getWidth()),
+			new Random().nextInt(baseframe.getHeight() - getHeight() - 55));
 
 		menubar = new JMenuBar();
 		menuSpiel = new JMenu("Spiel");
