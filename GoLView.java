@@ -230,6 +230,25 @@ class GoLView extends JInternalFrame implements Observer {
 			parrentFrame.getBaseFrameController().getNewGameCopyListener(currentGame));
 		menu.add(menuItem);
 
+		menu.addSeparator();
+
+		menuItem = new JMenuItem("Spiel laden");
+//		menuItem.addActionListener(
+//			parrentFrame.getBaseFrameController().getNewViewListener(currentGame));
+		menu.add(menuItem);
+
+		menuItem = new JMenuItem("Spiel Speichern");
+//		menuItem.addActionListener(
+//			parrentFrame.getBaseFrameController().getNewViewListener(currentGame));
+		menu.add(menuItem);
+
+		menu.addSeparator();
+
+		menuItem = new JMenuItem("Spiel beenden");
+		menuItem.addActionListener(
+			parrentFrame.getBaseFrameController().getCloseGameListener(currentGame));
+		menu.add(menuItem);
+
 		menuBar.add(menu);
 
 		// **** Modus ****
