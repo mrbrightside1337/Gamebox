@@ -118,12 +118,11 @@ class BaseFrameController {
 	}
 
 	/**
-	 * Beende das Programm
+	 * Listener für GameBoxMenü
 	 */
-	public ActionListener getCloseListener() {
+	public ActionListener getGameBoxListener() {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Beende Programm");
 				baseFrame.dispose();
 				System.exit(0);
 			}

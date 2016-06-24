@@ -28,7 +28,7 @@ class BaseFrame extends JFrame {
 	 * @param	height	Fensterhöhe (in px)
 	 */
 	public BaseFrame(int width, int height) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("GameBox");
 		setSize(width, height);
 
@@ -82,17 +82,32 @@ class BaseFrame extends JFrame {
 		menuBar = new JMenuBar();
 		
 		//****************************
+		// Menüeinträge für GameBox
+		//****************************
+		
+		JMenu menu = new JMenu("GameBox");
+		
+		// Programm Beenden
+		JMenuItem menuItemClose = new JMenuItem("Beenden");
+		menuItemClose.addActionListener(controller.getGameBoxListener());
+		menu.add(menuItemClose);
+		
+		menuBar.add(menu);
+		
+		//****************************
 		// Menüeinträge für GoL
 		//****************************
 
-		JMenu menu = new JMenu("GoL");
+		menu = new JMenu("GoL");
 
 		// Neues Spiel erstellen
 		JMenuItem menuItemNewGame = new JMenuItem("Neues Spiel");
 		menuItemNewGame.addActionListener(controller.getNewGameListener());
 		menu.add(menuItemNewGame);
 
-		menu.addSeparator();
+		if (gamesList.size() > 0) {
+			menu.addSeparator();
+		}
 
 		// Liste aller aktiven Spiele mit ihren Untermenüs
 		JMenu submenuGame;
@@ -111,59 +126,37 @@ class BaseFrame extends JFrame {
 			menu.add(submenuGame);
 		}
 
-		// Kein zweiter Seperator, wenn keine Spiele aktiv sind
-		if (gamesList.size() > 0) {
-			menu.addSeparator();
-		}
-
-		// Programm Beenden
-		JMenuItem menuItemClose = new JMenuItem("Beenden");
-		menuItemClose.addActionListener(controller.getCloseListener());
-		menu.add(menuItemClose);
-
 		menuBar.add(menu);
 		
 		//****************************
-		// Menüeinträge für Regenbogen
+		// Menüeinträge für Weitere Spiele
 		//****************************
 		
-		menu = new JMenu("Regenbogen");
-		JMenuItem regenbogenStarten = new JMenuItem("Starten");
-		regenbogenStarten.setActionCommand("regenbogenStarten");
-		regenbogenStarten.addActionListener(controller.getRegenbogenListener());
-		menu.add(regenbogenStarten);
-		menuBar.add(menu);
+		menu = new JMenu("Weitere Spiele");
 		
-		//****************************
-		// Menüeinträge für Quod
-		//****************************
-		
-		menu = new JMenu("Quod");
-		JMenuItem quodStarten = new JMenuItem("Starten");
+		//Quod
+		JMenuItem quodStarten = new JMenuItem("Quod");
 		quodStarten.setActionCommand("quodStarten");
 		quodStarten.addActionListener(controller.getQuodListener());
 		menu.add(quodStarten);
-		menuBar.add(menu);
-
-		//****************************
-		// Menüeinträge für Schloss
-		//****************************
 		
-		menu = new JMenu("Schloss");
-		JMenuItem schlossStarter = new JMenuItem("Starten");
+		//Regenbogen
+		JMenuItem regenbogenStarten = new JMenuItem("Regenbogen");
+		regenbogenStarten.setActionCommand("regenbogenStarten");
+		regenbogenStarten.addActionListener(controller.getRegenbogenListener());
+		menu.add(regenbogenStarten);
+		
+		//Schloss
+		JMenuItem schlossStarter = new JMenuItem("Schloss");
 		schlossStarter.addActionListener(controller.getSchlossListener());
 		menu.add(schlossStarter);
-		menuBar.add(menu);
 		
-		//****************************
-		// Menüeinträge für Sonstiges
-		//****************************
-		
-		menu = new JMenu("Sonstiges");
+		//Drehschloss
 		JMenuItem drehSchlossStarter = new JMenuItem("Drehschloss");
 		drehSchlossStarter.addActionListener(controller.getSonstigesListener());
 		menu.add(drehSchlossStarter);
 		
+		//Max
 		JMenuItem maxStarter = new JMenuItem("Max");
 		maxStarter.addActionListener(controller.getSonstigesListener());
 		menu.add(maxStarter);
