@@ -1,17 +1,22 @@
+/**
+ * MaxView.java
+ *
+ * Das GUI des Spiels MAX.
+ * Enthält ein Menü, eine Zeile mit Informationen zum aktuellen Spiel sowie
+ * das Spielfeld.
+ *
+ * @author Anton Makarow (191721)
+ * @author Timo Appenzeller (191382)
+ *
+ * @date 24.06.2016
+ */
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Random;
 
 import javax.swing.*;
 
-/**
- * GUI.java
- * Das GUI des Spiels MAX.
- * Enthält ein Menü, eine Zeile mit Informationen zum aktuellen Spiel sowie das Spielfeld.
- * 
- * @author Timo Appenzeller (191382), Anton Makarow (191721)
- * @date 19.04.2016
- */
 public class MaxView extends JInternalFrame {
 	
 	//Elemente fürs Menü

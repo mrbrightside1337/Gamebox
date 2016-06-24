@@ -1,23 +1,24 @@
+/**
+ * Schreiben Sie das GUI-Programm mit den zehn Knöpfen för ein Schloss aus der
+ * letzten Woche um: Nun soll eine Kombination von 8 Knopfdrücken
+ * (0-1-0-4-2-0-1-6) das Schloss öffnen, also das Programm beenden. Die Knöpfe
+ * sollen aber diesmal wie in der Abbildung ringförmig angeordnet sein.
+ * Zusätzlich soll sich die Beschriftung (und damit die Wirkung) der Knöpfe
+ * im Sekundentakt um eine Position drehen, zunächst nach rechts. Bei jedem
+ * falschen Knopfdruck ändert sich allerdings die Drehrichtung.
+ *
+ * @author Anton Makarow (191721)
+ * @author Timo Appenzeller (191382)
+ *
+ * @date 24.06.2016
+ */
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.*;
-
-
-/**
- * Schreiben Sie das GUI-Programm mit den zehn Kn�pfen f�r ein Schloss aus der letzten Woche
- * um: Nun soll eine Kombination von 8 Knopfdr�cken (0-1-0-4-2-0-1-6) das Schloss �ffnen, also
- * das Programm beenden. Die Kn�pfe sollen aber diesmal wie in der Abbildung ringf�rmig
- * angeordnet sein.
- * Zus�tzlich soll sich die Beschriftung (und damit die Wirkung) der Kn�pfe im Sekundentakt um
- * eine Position drehen, zun�chst nach rechts. Bei jedem falschen Knopfdruck �ndert sich allerdings
- * die Drehrichtung. 
- * @author Timo Appenzeller, 191382
- * @date 31.03.2016
- */
-
 
 public class DrehSchloss extends JInternalFrame implements ActionListener {
 	

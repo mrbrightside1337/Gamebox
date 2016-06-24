@@ -3,8 +3,10 @@
  *
  * Hilfsklasse, die nach 750ms einen Farbewechsel des Hintergrunds veranlasst.
  *
- * @author Timo Appenzeller, 191382
- * @date 24.03.2016
+ * @author Anton Makarow (191721)
+ * @author Timo Appenzeller (191382)
+ *
+ * @date 24.06.2016
  */
 
 public class RegenbogenThread extends Thread {

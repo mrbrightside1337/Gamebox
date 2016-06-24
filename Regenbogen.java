@@ -6,8 +6,10 @@
  * Dreiviertelsekundentakt die Farbe wechselt, wobei reihum alle
  * Regenbogenfarben erscheinen.
  *
- * @author Timo Appenzeller, 191382
- * @date 24.03.2016
+ * @author Anton Makarow (191721)
+ * @author Timo Appenzeller (191382)
+ *
+ * @date 24.06.2016
  */
 
 import java.awt.*;
