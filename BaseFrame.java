@@ -28,7 +28,7 @@ class BaseFrame extends JFrame {
 	 * @param	height	Fensterhöhe (in px)
 	 */
 	public BaseFrame(int width, int height) {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("GameBox");
 		setSize(width, height);
 
