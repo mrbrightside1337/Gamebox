@@ -88,7 +88,7 @@ class BaseFrame extends JFrame {
 		
 		// Programm Beenden
 		JMenuItem menuItemClose = new JMenuItem("Beenden");
-		menuItemClose.addActionListener(controller.getGameBoxListener());
+		menuItemClose.addActionListener(controller.getCloseGameBoxListener());
 		menu.add(menuItemClose);
 		
 		menuBar.add(menu);

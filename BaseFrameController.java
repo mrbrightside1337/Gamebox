@@ -105,7 +105,7 @@ class BaseFrameController {
 	/**
 	 * Listener für GameBoxMenü
 	 */
-	public ActionListener getGameBoxListener() {
+	public ActionListener getCloseGameBoxListener() {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				baseFrame.dispose();
