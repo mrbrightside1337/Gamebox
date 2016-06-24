@@ -80,20 +80,6 @@ class BaseFrameController {
 	}
 
 	/**
-	 * NICHT IMPLEMENTIERT!
-	 * Popup mit einer Liste der aktiven Spiele
-	 */
-	public ActionListener getShowActiveGamesListener() {
-		return new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Zeige Liste mit aktiven Spielen...");
-				JOptionPane.showMessageDialog(baseFrame,
-					"Liste mit aktiven Spieln");
-			}
-		};
-	}
-
-	/**
 	 * Schliesse ein Spiel mit all seinen Ansichten (InternalFrames)
 	 * Aktualisiere das Menü damit der Eintrag entfernt wird.
 	 */
