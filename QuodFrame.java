@@ -7,7 +7,6 @@
 import java.awt.Dimension;
 
 import javax.swing.Box;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;

@@ -9,7 +9,6 @@
  */
 
 import java.awt.event.*;
-import java.util.*;	// ArrayList<E>
 import javax.swing.*;
 
 class BaseFrameController {

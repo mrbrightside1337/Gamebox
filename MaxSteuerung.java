@@ -1,7 +1,5 @@
 import java.awt.event.*;
 
-import javax.swing.AbstractAction;
-
 /**
  * Steuerung.java
  * Enthält die Programmlogik, die den Spielablauf steuert.

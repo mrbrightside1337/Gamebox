@@ -17,7 +17,6 @@ import java.awt.Point;
 import java.util.*;
 
 import javax.swing.*;
-import javax.swing.event.*;
 
 class GoLView extends JInternalFrame implements Observer {
 	private GoLViewController controller;
