@@ -32,7 +32,7 @@ public class QuodFrame extends JInternalFrame {
 	
 	public QuodFrame(BaseFrame baseframe){
 		// JInternalFrame(resizable, closable, maximizable, iconifiable)
-		super("Quod", true, true, true, true);
+		super("Quod", false, true, true, true);
 		setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
 
 		this.baseframe = baseframe;
