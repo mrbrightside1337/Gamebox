@@ -1,5 +1,7 @@
 /**
  * QuodInfoPanel.java
+ * 
+ * Panel, das Informationen zum Quod Spiel anzeigt: Status, Anzahl Spielsteine von Spieler 1 und Spieler 2.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)

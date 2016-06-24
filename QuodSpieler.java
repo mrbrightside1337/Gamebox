@@ -1,5 +1,7 @@
 /**
  * QuadSpieler.java
+ * 
+ * Repräsentiert einen Spieler des Quod Spiels.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)

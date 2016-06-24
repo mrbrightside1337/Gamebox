@@ -1,5 +1,7 @@
 /**
  * QuadFrame.java
+ * 
+ * Das Kind-Fenster, das verschiedene Panels des Quod Spiels anzeigt. 
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)

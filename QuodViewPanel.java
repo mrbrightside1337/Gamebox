@@ -1,5 +1,7 @@
 /**
  * QuadViewPanel.java
+ * 
+ * Zeichnet das Spielfeld des Quod Spiels.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)
@@ -92,7 +94,7 @@ public class QuodViewPanel extends JPanel implements Observer {
 					g.fillRect((int)((x * zoom)) , (int)((y * zoom)),
 					(int)zoom - 1, (int)zoom - 1);
 				}
-				else if(spielfeld.getFeld(x, y) == 7) {//leere Zellen
+				else if(spielfeld.getFeld(x, y) == 7) {//Zellen mit Steinen des Gewinner-Quadrats
 					g.setColor(winColor);
 					g.fillRect((int)((x * zoom)) , (int)((y * zoom)),
 					(int)zoom - 1, (int)zoom - 1);
@@ -108,12 +110,16 @@ public class QuodViewPanel extends JPanel implements Observer {
 	
 	/**
 	 * Gibt den Zoom-Faktor zurück
-	 * @return
+	 * @return Zoom-Wert
 	 */
 	public double getZoom(){
 		return zoom;
 	}
 	
+	/**
+	 * Gibt den QuodGameController zurück.
+	 * @return QuodGameController
+	 */
 	public QuodGameController getGameController(){
 		return controller;
 	}

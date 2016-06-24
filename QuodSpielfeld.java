@@ -1,5 +1,7 @@
 /**
  * QuadSpielfeld.java
+ * 
+ * Bildet das Spielfeld virtuell ab.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)

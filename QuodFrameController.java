@@ -1,5 +1,7 @@
 /**
  * QuadframeController.java
+ * 
+ * Controller, der die Events des QuodFrames verarbeitet.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)

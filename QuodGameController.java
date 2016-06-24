@@ -1,5 +1,9 @@
 /**
  * QuadGameController.java
+ * 
+ * Enthält die Spiellogik des Quod Spiels.
+ * 
+ * Verarbeitet Events aus dem QuodViewPanel.
  *
  * @author Anton Makarow (191721)
  * @author Timo Appenzeller (191382)
@@ -83,7 +87,7 @@ public class QuodGameController extends Observable{
 				notifyObservers();
 			}
 			
-			//Sofern keine Quads mehr vorhanden sind
+			//Sofern nach dem Setzen keine Quads mehr vorhanden sind
 			else if(button==1 && keineQuadsMehr()){
 				if(spielerEins.getAnzahlQuasare()>spielerZwei.getAnzahlQuasare()){
 					state = QuodGameState.WinP1;
@@ -170,10 +174,12 @@ public class QuodGameController extends Observable{
 		
 		for (int i = 0; i < feldArray.length; i++) {
 			for (int j = 0; j < feldArray.length; j++) {
+				//Spielstein der gleichen Farbe suchen, welcher nicht derjenige ist, der gerade gesetzt wurde.
 				if(!(i==y && j==x) && feldArray[i][j]==spielerNummer){
-					dx=j-x;
-					dy=i-y;
+					dx=j-x; //horizontaler Abstand zum gefundenen Spielstein
+					dy=i-y; //vertikaler Abstand zum gefundenen Spielstein
 					
+					//dxNeu und dyNeu sind Richtungen, an denen weitere Spielsteine sitzen müssen, damit ein Quadrat vorliegt 
 					int dxNeu = dy;
 					int dyNeu = dx*-1;
 					if(winCheckHelper(x, y, j, i, dxNeu, dyNeu, spielerNummer)){
@@ -193,17 +199,17 @@ public class QuodGameController extends Observable{
 	}
 	
 	/**
-	 * 
-	 * @param x
-	 * @param y
-	 * @param j
-	 * @param i
-	 * @param dx
-	 * @param dy
-	 * @param spielerNummer
-	 * @return
+	 * Wird von checkWin als Hilfsmethode benutzt. Nicht von außen aufrufbar.
+	 * @param x X-Koordinate des zuletzt gesetzten Steins
+	 * @param y Y-Koordinate des zuletzt gesetzten Steins
+	 * @param x2 X-Koordinate eines gefundenen Spielsteins
+	 * @param y2 Y-Koordinate eines gefundenen Spielsteins
+	 * @param dx horizontaler Abstand, an welchem ein Spielstein sitzen müsste, damit ein Quadrat vorliegt
+	 * @param dy vertikaler Abstand, an welchem ein Spielstein sitzen müsste, damit ein Quadrat vorliegt
+	 * @param spielerNummer Spielernummmer, des aktullen Spielers
+	 * @return true, wenn ein Quadrat vorliegt; false, wenn kein Quadrat gefunden wurde
 	 */
-	private boolean winCheckHelper(int x, int y, int j, int i, int dx, int dy, int spielerNummer){
+	private boolean winCheckHelper(int x, int y, int x2, int y2, int dx, int dy, int spielerNummer){
 		int anzahl=0;
 		
 		if(spielfeld.zelleIsOnBoard(x+dx, y+dy)){
@@ -211,16 +217,16 @@ public class QuodGameController extends Observable{
 				anzahl++;
 			}
 		}
-		if(spielfeld.zelleIsOnBoard(j+dx, i+dy)){
-			if(spielfeld.getFeld(j+dx, i+dy)==spielerNummer){
+		if(spielfeld.zelleIsOnBoard(x2+dx, y2+dy)){
+			if(spielfeld.getFeld(x2+dx, y2+dy)==spielerNummer){
 				anzahl++;
 			}
 		}
 		if (anzahl==2) {
 			spielfeld.setFeld(x, y, 7);
-			spielfeld.setFeld(j, i, 7);
+			spielfeld.setFeld(x2, y2, 7);
 			spielfeld.setFeld(x+dx, y+dy, 7);							
-			spielfeld.setFeld(j+dx, i+dy, 7);
+			spielfeld.setFeld(x2+dx, y2+dy, 7);
 			return true;
 		}
 		else{
@@ -263,7 +269,7 @@ public class QuodGameController extends Observable{
 	private Point getGridCell(double x, double y) {
 		int xCell = (int)(x / panel.getZoom());
 		int yCell = (int)(y / panel.getZoom());
-		//System.out.println("Zelle: " + xCell + "/" + yCell);
+		
 		return new Point(xCell, yCell);
 	}
 	
