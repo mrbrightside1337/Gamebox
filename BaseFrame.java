@@ -34,7 +34,7 @@ class BaseFrame extends JFrame {
 		desktopPane.setDesktopManager(new DefaultDesktopManager());
 		setContentPane(desktopPane);
 
-		setJMenuBar(updateMenu());
+		updateMenu();
 
 		setVisible(true);
 	}
@@ -75,7 +75,7 @@ class BaseFrame extends JFrame {
 	 * + Beenden (Programm beenden)
 	 *
 	 */
-	public JMenuBar updateMenu() {
+	public void updateMenu() {
 
 		// Erstelle eine neue saubere MenuBar
 		menuBar = new JMenuBar();
@@ -162,6 +162,6 @@ class BaseFrame extends JFrame {
 		
 		menuBar.add(menu);
 
-		return menuBar;
+		setJMenuBar(menuBar);
 	}
 }

@@ -44,7 +44,7 @@ class BaseFrameController {
 
 				createNewChildFrame(newGame);
 
-				baseFrame.setJMenuBar(baseFrame.updateMenu());
+				baseFrame.updateMenu();
 			}
 		};
 	}
@@ -62,7 +62,7 @@ class BaseFrameController {
 
 				createNewChildFrame(newGame);
 
-				baseFrame.setJMenuBar(baseFrame.updateMenu());
+				baseFrame.updateMenu();
 			}
 		};
 	}
@@ -111,7 +111,7 @@ class BaseFrameController {
 						baseFrame.getGamesList().remove(i);
 				}
 
-				baseFrame.setJMenuBar(baseFrame.updateMenu());
+				baseFrame.updateMenu();
 			}
 		};
 	}
