@@ -13,8 +13,10 @@
 import java.awt.Color;
 import java.awt.event.*;
 import java.awt.Point;
+import java.io.*;
 
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
 import javax.swing.event.*;
 
 class GoLViewController {
@@ -58,6 +60,71 @@ class GoLViewController {
 			public void internalFrameActivated(InternalFrameEvent e) {}
 
 			public void internalFrameDeactivated(InternalFrameEvent e) {}
+		};
+	}
+
+	public ActionListener getLoadGameListener(GoLModel game) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				game.pause();
+
+				JFileChooser fileChooser = new JFileChooser();
+				if (fileChooser.showOpenDialog(view) == JFileChooser.APPROVE_OPTION) {
+					String loadLocation =
+						fileChooser.getCurrentDirectory().toString()
+						+ File.separator
+						+ fileChooser.getSelectedFile().getName();
+					System.out.println("Lade: "	+ loadLocation);
+
+					try {
+						FileInputStream fis = new FileInputStream(loadLocation);
+						ObjectInputStream ois = new ObjectInputStream(fis);
+						GoLModel loadedGame = (GoLModel) ois.readObject();
+						// Überschreibe das aktuelle Spiel mit dem geladenen
+						game.setCycleDelay(loadedGame.getCycleDelay());
+						game.setGeneration(loadedGame.getGeneration());
+						game.copyForm(loadedGame.getField());
+
+						ois.close();
+					} catch (ClassNotFoundException ex) {
+						System.out.println("ClassNotFoundException: " + ex);
+					} catch (IOException ex) {
+						System.out.println("IOException: " + ex);
+					}
+
+				}
+
+				game.resume();
+			}
+		};
+	}
+
+	public ActionListener getSaveGameListener(GoLModel game) {
+		return new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				game.pause();
+
+				JFileChooser fileChooser = new JFileChooser();
+				if (fileChooser.showSaveDialog(view) == JFileChooser.APPROVE_OPTION) {
+					String saveLocation =
+						fileChooser.getCurrentDirectory().toString()
+						+ File.separator
+						+ fileChooser.getSelectedFile().getName();
+					System.out.println("Speichere in: "	+ saveLocation);
+
+					try {
+						FileOutputStream fos = new FileOutputStream(saveLocation);
+						ObjectOutputStream oos = new ObjectOutputStream(fos);
+						oos.writeObject(game);
+						oos.close();
+					} catch (IOException ex) {
+						System.out.println("IOException: " + ex);
+					}
+
+				}
+
+				game.resume();
+			}
 		};
 	}
 

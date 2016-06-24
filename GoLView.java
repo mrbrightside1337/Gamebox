@@ -68,6 +68,10 @@ class GoLView extends JInternalFrame implements Observer {
   		show();
 	}
 
+	public GoLModel getCurrentGame() {
+		return currentGame;
+	}
+
 	public int getCurrentGameID() {
 		return currentGame.getGameID();
 	}
@@ -233,13 +237,11 @@ class GoLView extends JInternalFrame implements Observer {
 		menu.addSeparator();
 
 		menuItem = new JMenuItem("Spiel laden");
-//		menuItem.addActionListener(
-//			parrentFrame.getBaseFrameController().getNewViewListener(currentGame));
+		menuItem.addActionListener(controller.getLoadGameListener(currentGame));
 		menu.add(menuItem);
 
-		menuItem = new JMenuItem("Spiel Speichern");
-//		menuItem.addActionListener(
-//			parrentFrame.getBaseFrameController().getNewViewListener(currentGame));
+		menuItem = new JMenuItem("Spiel speichern");
+		menuItem.addActionListener(controller.getSaveGameListener(currentGame));
 		menu.add(menuItem);
 
 		menu.addSeparator();

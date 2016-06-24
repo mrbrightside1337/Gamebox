@@ -24,12 +24,13 @@
  * @date 24.06.2016
  */
 
+import java.io.Serializable;
 import java.util.*;
 
-class GoLModel extends Observable {
-	private GoLModelController controller = new GoLModelController(this);
+class GoLModel extends Observable implements Serializable {
+	private transient GoLModelController controller = new GoLModelController(this);
 
-	static private int gameCounter = 1;
+	static private transient int gameCounter = 1;
 	private int gameID = 0; // ID dieses Spiels (wird pro Spiel um 1 erhöht)
 
 	private int cycleDelay = 1000; // Schrittgeschwindigkeit in millisekunden (ms)
@@ -88,6 +89,13 @@ class GoLModel extends Observable {
 	}
 
 	/**
+	 * @return	Aktuelle Gernation
+	 */
+	public int getGeneration() {
+		return generation;
+	}
+
+	/**
 	 * @return	Das Spielfeld
 	 */
 	public boolean[][] getField() {
@@ -125,6 +133,10 @@ class GoLModel extends Observable {
 	 */
 	public void setGameID(int id) {
 		gameID = id;
+	}
+
+	public void setGeneration(int gen) {
+		generation = gen;
 	}
 
 	/**
@@ -257,7 +269,7 @@ class GoLModel extends Observable {
 		*/
 	}
 
-	private void copyForm(boolean[][] src) {
+	public void copyForm(boolean[][] src) {
 		// Neues und sauberes Spielfeld (um keine Reste zu haben)
 		boolean[][] formTMP = new boolean[getHeight()][getWidth()];
 

@@ -113,6 +113,8 @@ class BaseFrame extends JFrame {
 		// Liste aller aktiven Spiele mit ihren Untermenüs
 		JMenu submenuGame;
 		for(GoLModel game : gamesList) {
+			System.out.println("Lade Spiel: " + game.getGameID()
+				+ " ins GoL Menü");
 			submenuGame = new JMenu("Spiel " + game.getGameID());
 
 			JMenuItem submenuItemNewView = new JMenuItem("Neue Ansicht");

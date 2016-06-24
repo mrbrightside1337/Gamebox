@@ -92,13 +92,11 @@ class BaseFrameController {
 
 				// Schliesse alle Observer Fenster
 				game.closeObservers();
-
 				// Das kann man bestimmer geschickter machen
 				for(int i = 0; i < baseFrame.getGamesList().size(); ++i) {
 					if(baseFrame.getGamesList().get(i) == game)
 						baseFrame.getGamesList().remove(i);
 				}
-
 				baseFrame.updateMenu();
 			}
 		};
